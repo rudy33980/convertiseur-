@@ -58,7 +58,6 @@ fetch("https://happyapi.fr/api/devises")
         maVariable3[i].taux;
       selectBalize[i].textContent = myElements;
 
-      let selectedDevise; // variable globale pour stocker la devise sélectionnée
       selectBalize[i];
       selectBalize[i].addEventListener("mouseover", () => {
         selectBalize[i].style.backgroundColor = "blue";
@@ -76,7 +75,7 @@ fetch("https://happyapi.fr/api/devises")
           const inputValue = e.target.value;
           const regex = /[^0-9]/g;
           const sanitizedValue = inputValue.replace(regex, "");
-          montant.style.width = "500px";
+          // montant.style.width = "500px";
 
         
 
