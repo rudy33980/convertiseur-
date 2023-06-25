@@ -7,6 +7,7 @@ fetch("https://happyapi.fr/api/devises")
     let maVariable3 = maVariable2.devises;
     let table = document.querySelector("table");
     let montant = document.getElementById("montant");
+    montant.style.boxShadow = "15px 2px 12px 4px rgba(0,0,0,0.78)";
 
     tableau.push(maVariable3);
 
@@ -75,7 +76,8 @@ fetch("https://happyapi.fr/api/devises")
           const inputValue = e.target.value;
           const regex = /[^0-9]/g;
           const sanitizedValue = inputValue.replace(regex, "");
-          // montant.style.width = "500px";
+          
+          montant.style.width = "500px";
 
         
 
@@ -86,6 +88,12 @@ fetch("https://happyapi.fr/api/devises")
             selectBalize[i].style.backgroundColor = "red";
             let result = e.target.value * maVariable3[i].taux;
             let resultat = document.querySelector(".resultat");
+            let myContainer = document.querySelector('.container-resultat');
+            let displayResult = document.createElement('h2');
+            displayResult.classList.add("result");
+            displayResult.textContent = 'Resultat ci-dessous';
+            myContainer.append(displayResult);
+          
             resultat.innerHTML =
               result.toFixed(2) + " " + maVariable3[i].codeISODevise;
             resultat.classList.add("show");
